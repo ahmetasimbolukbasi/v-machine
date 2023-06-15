@@ -12,13 +12,13 @@ function App() {
       <Content>
         <MainPage />
       </Content>
-      <Footer style={{ backgroundColor: "gray" }}>
+      <Footer style={{ backgroundColor: 'rgb(22, 9, 52)' , position: 'absolute',left:'0',bottom:'0',right:'0' }}>
         <div className="footer" >
-          <div id="Counter">
+         {/*  <div id="Counter">
             <Counter/>
-          </div>
-          <div id="isim">
-           A.ASIM BÖLÜKBAŞI  
+          </div> */}
+          <div id="isim" >
+           Designed By A.Asım           
            </div>
         </div>
       </Footer>

@@ -16,7 +16,7 @@ import { Link } from 'react-router-dom'
                         <div className="card-image">
                             <img src={item.img} alt={item.title}/>
                             <span className="card-title">{item.title}</span>
-                            <Link to="/"> <span to="/" className="btn-floating halfway-fab waves-effect waves-light red"  disabled={(item.sayi<=0)} onClick={()=>{this.handleClick(item.id)}}><i className="material-icons">add</i></span></Link>
+                            <Link to="/home"> <span to="/" className="btn-floating halfway-fab waves-effect waves-light red"  disabled={(item.sayi<=0)} onClick={()=>{this.handleClick(item.id)}}><i className="material-icons">add</i></span></Link>
                             <b>  <span className="quantity-item">Stock:{item.sayi}</span></b>       
                         </div>
                         <div className="card-content">

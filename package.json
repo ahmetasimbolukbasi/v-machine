@@ -1,7 +1,7 @@
 {
   "name": "my-shopping-cart",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "dependencies": {
     "and": "^0.0.3",
     "antd": "^5.6.1",
@@ -15,8 +15,8 @@
     "redux": "^4.0.1"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "react-scripts --openssl-legacy-provider start",
+    "build": "react-scripts --openssl-legacy-provider build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -28,9 +28,5 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ],"development": [
-    "last 1 chrome version",
-    "last 1 firefox version",
-    "last 1 safari version"
   ]
 }
