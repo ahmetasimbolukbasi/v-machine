@@ -1,7 +1,7 @@
 {
   "name": "my-shopping-cart",
   "version": "0.1.0",
-  "private": false,
+  "private": true,
   "dependencies": {
     "and": "^0.0.3",
     "antd": "^5.6.1",
@@ -28,5 +28,9 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
+  ],"development": [
+    "last 1 chrome version",
+    "last 1 firefox version",
+    "last 1 safari version"
   ]
 }
