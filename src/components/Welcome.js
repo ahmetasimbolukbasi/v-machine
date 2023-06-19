@@ -1,32 +1,27 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux'
-import { refund } from './actions/cartActions'
+import { connect, } from 'react-redux'
 import resim1 from "../images/vm.jpg";
 import { Link } from 'react-router-dom'
 
- class Welcome extends Component{
-    
-    render(){   
+class Welcome extends Component {
 
-        return(
-            <div className="container" >    
-              <div className="container2" style={{position: 'absolute',left: '50%',top: '50%',transform: ' translate(-50%, -50%)'}} >       
-                         
-                <Link to="/home"> <img src={resim1} ></img>    </Link>  
-                </div>
-            </div>
-        )
-    }
-}
-const mapStateToProps = (state)=>{    
-    return {
-        state: state
-    }
+  render() {
+    return (
+      <div className="container" >
+        <div className="container2" style={{ position: 'absolute', left: '50%', top: '50%', transform: ' translate(-50%, -50%)' }} >
+          <Link to="/home"> <img src={resim1} alt={''}></img></Link>
+        </div>
+      </div>
+    )
   }
-const mapDispatchToProps= (dispatch)=>{    
-    return{
-        refund: () => { dispatch(refund()) }
-    }
+}
+const mapStateToProps = (state) => {
+  return {
+  }
+}
+const mapDispatchToProps = (dispatch) => {
+  return {
+  }
 }
 
-export default connect(mapStateToProps,mapDispatchToProps)(Welcome)
+export default connect(mapStateToProps, mapDispatchToProps)(Welcome)

@@ -1,25 +1,22 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Select, Space } from 'antd';
-import { addMoney,refund } from './actions/cartActions'
+import { addMoney, refund } from './actions/cartActions'
 
 
 class Account extends Component {
-
-
     handleClick = (value) => {
         this.props.addMoney(value);
     };
-
+    onChange = (value) => {
+        this.value = value
+    };
     render() {
-        const onChange = (value) => {
-
-            this.value = value
-        };
         const BanknotBox = () => (
             <Space wrap>
                 <Select
-                    onChange={onChange}
+                    onChange={this.onChange}
+                    defaultValue={this.value}
                     style={{
                         width: 120,
                     }}
@@ -38,22 +35,20 @@ class Account extends Component {
                         },
                     ]}
                 />
-
             </Space>
         );
 
         return (
             <div className="containerAccount">
-                <div className="collection">                    
+                <div className="collection">
                     <li className="collection-item"><b>Total Cash: {this.props.consumerCashTotal} ₺</b></li>
-                </div>             
-                <div className="add">
-                <BanknotBox>                           
-                </BanknotBox>
-                    <button className="waves-effect waves-light btn" onClick={() => { this.handleClick(this.value) }}> add CASH</button>               
-                    <button className="waves-effect waves-light btn pink remove" onClick={()=>{this.refund()}}>REFUND</button>
                 </div>
-
+                <div className="add">
+                    <BanknotBox>
+                    </BanknotBox>
+                    <button className="waves-effect waves-light btn" onClick={() => { this.handleClick(this.value) }}> add CASH</button>
+                    <button className="waves-effect waves-light btn pink remove" onClick={() => { this.props.refund() }}>REFUND</button>
+                </div>
             </div>
         )
     }

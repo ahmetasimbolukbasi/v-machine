@@ -2,27 +2,18 @@ import React, { Component } from "react";
 import { connect } from 'react-redux'
 import { setTimer } from './actions/adminActions'
 
-
 class Counter extends Component {
-
-
   render() {
-    console.log(`selected!!!!!!  ${this.props.time }`)
-    // First Attempts
-   /*  setInterval(() => this.props.setTimer(), 1000); */
-    return (     
-               
-      <div className="collection">                 
-      <li className="collection-item"><b>Total: {Date(this.props.state.time)} </b></li>
-  </div>
+    return (
+      <div className="counterTitle">
+        {this.props.setTimer()}
+      </div>
     )
   }
-
-
 }
-const mapStateToProps = (state) => {  
+const mapStateToProps = (state) => {
   return {
-   state:state
+    consuptions: state.consuptions
   }
 }
 const mapDispatchToProps = (dispatch) => {
