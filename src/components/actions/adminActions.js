@@ -53,9 +53,10 @@ export const reset = () => {
     }
 
 }    //set total energy consuption
-export const setTimer = () => {
+export const setTimer = (value) => {
     return {
-        type: SET_TIMER
+        type: SET_TIMER,
+        value
     }
 }
 

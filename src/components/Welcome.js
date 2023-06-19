@@ -2,9 +2,7 @@ import React, { Component } from 'react';
 import { connect, } from 'react-redux'
 import resim1 from "../images/vm.jpg";
 import { Link } from 'react-router-dom'
-
 class Welcome extends Component {
-
   render() {
     return (
       <div className="container" >
@@ -21,6 +19,7 @@ const mapStateToProps = (state) => {
 }
 const mapDispatchToProps = (dispatch) => {
   return {
+
   }
 }
 

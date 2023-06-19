@@ -89,7 +89,8 @@ class Admin extends Component {
                                     </div>
                                 </div>
                             </ul>
-                            <button className="waves-effect waves-light btn pink remove" onClick={() => { this.props.reset() }}>RESET ALL MACHINE</button>
+                            <Link to="/Admin"> <button className="waves-effect waves-light btn pink remove" onClick={() => { this.props.reset() }}>RESET ALL MACHINE</button></Link>
+                           
                         </div>
                         <div className="cart" style={{ backgroundColor: "gray" }}>
                             <h5>Propt Cash</h5>

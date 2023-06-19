@@ -1,19 +1,16 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux'
 import { setTimer } from './actions/adminActions'
-
+import Heartbeat from 'react-heartbeat';
 class Counter extends Component {
   render() {
-    return (
-      <div className="counterTitle">
-        {this.props.setTimer()}
-      </div>
+    return (      
+        <Heartbeat heartbeatFunction={this.props.setTimer} heartbeatInterval={1000} />    
     )
   }
 }
 const mapStateToProps = (state) => {
   return {
-    consuptions: state.consuptions
   }
 }
 const mapDispatchToProps = (dispatch) => {

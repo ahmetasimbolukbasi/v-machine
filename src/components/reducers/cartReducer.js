@@ -16,6 +16,7 @@ const initStateOfCart = {
     ],
     addedItems: [],
     total: 0,
+    zaman: new Date(),
     totalEnergyConsumption: 0,
     consumerCashTotal: 0,
     adminCashTotal: 0
@@ -112,8 +113,11 @@ const cartReducer = (state = initStateOfCart, action) => {
         }
     }
     if (action.type === CHECK_OUT) {
-        if (state.consumerCashTotal >= state.total) {
-            for (let i = 0; i++; i < state.addedItems.length) { state.consuptions[1].sayi += state.addedItems[i].quantity }
+       
+        if (state.consumerCashTotal >= state.total) {    console.log( state.addedItems.length)        
+            for ( let i = 0; i < state.addedItems.length; i++) {
+                console.log('ahmet asim bol')
+                state.consuptions[1].sayi += state.addedItems[i].quantity };
             state.adminCashTotal += state.total;
             state.consumerCashTotal = state.consumerCashTotal - state.total;
             state.total = 0;
@@ -169,6 +173,7 @@ const cartReducer = (state = initStateOfCart, action) => {
 
     if (action.type === RESET) {
         state = initStateOfCart;
+        state.consuptions[0].sayi=0;
 
         return {
             ...state
@@ -186,17 +191,14 @@ const cartReducer = (state = initStateOfCart, action) => {
 
         }
     } if (action.type === SET_TIMER) {
-        setInterval(() => {
+      
             state.consuptions[0].sayi += 1;
-            console.log(`selected ${state.consuptions[0].sayi}`);
             state.totalEnergyConsumption = 0;
-            state.totalEnergyConsumption = (state.consuptions[0].price * state.consuptions[0].sayi) + ((state.consuptions[1].price * state.consuptions[1].sayi))
-           
+            state.totalEnergyConsumption = (state.consuptions[0].price * state.consuptions[0].sayi) + ((state.consuptions[1].price * state.consuptions[1].sayi))            
             return {
                 ...state
 
-            }
-        }, 1000)
+            }    
     }
 
     if (action.type === TOTAL_MACHINE_CASH_ADMIN) {
