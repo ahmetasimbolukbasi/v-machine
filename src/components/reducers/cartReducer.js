@@ -165,7 +165,8 @@ const cartReducer = (state = initStateOfCart, action) => {
 
     if (action.type === DEC_PRICE_ITEM_ADMIN) {
         let selectedItem = state.items.find(item => item.id === action.id)
-        selectedItem.price--
+        if(selectedItem.price>0){
+        selectedItem.price--}
 
         return {
             ...state
