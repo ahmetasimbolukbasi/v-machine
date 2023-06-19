@@ -93,7 +93,7 @@ class Admin extends Component {
                            
                         </div>
                         <div className="cart" style={{ backgroundColor: "gray" }}>
-                            <h5>Propt Cash</h5>
+                            <h5>Cash Box</h5>
                             <p className="collection-item"><b>Total: {this.props.adminCashTotal} ₺</b></p>
                             <button className="waves-effect waves-light btn pink remove" onClick={() => { this.props.getTotalCashMachine() }}>TAKE ALL</button>
                         </div>

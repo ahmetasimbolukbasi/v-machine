@@ -2,8 +2,6 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Select, Space } from 'antd';
 import { addMoney, refund } from './actions/cartActions'
-
-
 class Account extends Component {
     handleClick = (value) => {
         this.props.addMoney(value);
